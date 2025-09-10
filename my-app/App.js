@@ -161,7 +161,7 @@ function FavoritosScreen({ favorites, navigation }) {
     <View style={styles.container}>
       <Text style={styles.title}>Mis Recetas Favoritas</Text>
       {favorites.length === 0 ? (
-        <Text>No tienes recetas favoritas aún.</Text>
+        <Text style={styles.otherText}>No tienes recetas favoritas aún.</Text>
       ) : (
         <FlatList
           data={favorites}
@@ -348,6 +348,13 @@ const styles = StyleSheet.create({
     color: '#FFD700', // dorado
     textAlign: 'center',
     marginBottom: 20,
+  },
+  otherText: {
+  fontSize: 28,
+  fontWeight: '700', // normal, menos grueso
+  color: '#067bc9ff',
+  textAlign: 'center',
+  marginBottom: 20,
   },
   item: {
     fontSize: 18,
