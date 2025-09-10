@@ -28,7 +28,7 @@ const [areas, setAreas] = useState([]); //guarda el estado de las areas
 
   //genera la lista de paises que trajo la api en el GET
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={styles.container}>
         <Text style={styles.title}>Recetas por region</Text>
       <FlatList
         data={areas}
@@ -138,26 +138,25 @@ export default function App() {
    return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Contador' }} />
-        <Stack.Screen name="Paises" component={PaisScreen} options={{ title: 'Paises' }} />
+        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Paises' }} />
+        <Stack.Screen name="Paises" component={PaisScreen} options={{ title: 'Recetas' }} />
         <Stack.Screen name="Recetas" component={RecetasScreen} options={{ title: 'Recetas' }} />
       </Stack.Navigator>
     </NavigationContainer>
   ); 
 }
 
-//ESTILOS DE LA APLICACION (modificados)
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f9fafb',   // fondo más limpio
+    backgroundColor: '#1E1E2F', // fondo oscuro elegante
     paddingHorizontal: 20,
     paddingTop: 20,
   },
   title: {
-    fontSize: 26,
-    fontWeight: '800',
-    color: '#1f2937',
+    fontSize: 28,
+    fontWeight: '900',
+    color: '#FFD700', // dorado
     textAlign: 'center',
     marginBottom: 20,
   },
@@ -165,69 +164,74 @@ const styles = StyleSheet.create({
     fontSize: 18,
     padding: 15,
     marginVertical: 8,
-    backgroundColor: '#ffffff',
-    borderRadius: 12,
+    backgroundColor: '#4B0082', // violeta profundo
+    borderRadius: 14,
     textAlign: 'center',
-    color: '#374151',
+    color: '#FFD700',
+    fontWeight: '700',
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 6,
-    elevation: 4,
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.4,
+    shadowRadius: 8,
+    elevation: 6,
   },
   mealItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#00CED1', // turquesa brillante
     marginVertical: 8,
     padding: 12,
-    borderRadius: 12,
+    borderRadius: 14,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.08,
-    shadowRadius: 4,
-    elevation: 3,
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.3,
+    shadowRadius: 6,
+    elevation: 5,
   },
   mealImage: {
     width: 80,
     height: 80,
-    borderRadius: 12,
+    borderRadius: 14,
     marginRight: 15,
+    borderWidth: 2,
+    borderColor: '#FF6347', // rojo tomate
   },
   mealName: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#111827',
+    fontSize: 17,
+    fontWeight: '700',
+    color: '#1E1E2F',
   },
   recipeCard: {
     marginBottom: 24,
     padding: 18,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#2E0854', // púrpura oscuro
     borderRadius: 16,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 3 },
-    shadowOpacity: 0.12,
-    shadowRadius: 6,
-    elevation: 4,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.4,
+    shadowRadius: 8,
+    elevation: 6,
   },
   recipeTitle: {
-    fontSize: 22,
-    fontWeight: '800',
-    color: '#e11d48',
-    marginBottom: 14,
+    fontSize: 24,
+    fontWeight: '900',
+    color: '#FFD700', // dorado
+    marginBottom: 16,
     textAlign: 'center',
   },
   recipeImage: {
     width: '100%',
     height: 240,
-    borderRadius: 14,
+    borderRadius: 16,
     marginBottom: 15,
+    borderWidth: 3,
+    borderColor: '#FF6347', // rojo
   },
   recipeText: {
-    fontSize: 15,
-    color: '#374151',
-    marginBottom: 8,
+    fontSize: 16,
+    color: '#E5E5E5',
+    marginBottom: 10,
     lineHeight: 22,
+    fontWeight: '500',
   },
 });
-
