@@ -95,4 +95,23 @@ export default StyleSheet.create({
     lineHeight: 22,
     fontWeight: '500',
   },
+   // 🔹 Nuevo contenedor con fondo blanco
+  whiteContainer: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 12,
+    padding: 15,
+    marginVertical: 10,
+  },
+
+  // 🔹 Estilo para los TextInput
+  inputBox: {
+    backgroundColor: '#FFFFFF',
+    borderWidth: 1,
+    borderColor: '#CCC',
+    borderRadius: 10,
+    padding: 12,
+    fontSize: 16,
+    color: '#000', // Texto negro para contraste
+    marginBottom: 12,
+  },
 });
