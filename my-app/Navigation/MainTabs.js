@@ -7,6 +7,7 @@ import HomeStack from './HomeStack';
 import FavoritosScreen from '../Screens/FavoritosScreen';
 import RandomScreen from '../Screens/RandomScreen';
 import NuevaRecetaScreen from '../Screens/NuevasRecetas';
+import ChecklistScreen from '../Screens/ChecklistScreen';
 
 // Creamos el contenedor de pestañas
 const Tab = createBottomTabNavigator();
@@ -25,6 +26,7 @@ export default function MainTabs({ favorites, addFavorite }) {
           else if (route.name === 'Favoritos') iconName = 'heart';
           else if (route.name === 'Random') iconName = 'shuffle';
           else if (route.name === 'Nueva receta') iconName = 'create';
+          else if (route.name === 'Lista de compras') iconName = 'cart';
           return <Ionicons name={iconName} size={size} color={color} />;
         },
       })}
@@ -46,6 +48,10 @@ export default function MainTabs({ favorites, addFavorite }) {
 
       <Tab.Screen name="Nueva receta">
         {(props) => <NuevaRecetaScreen {...props} />}
+      </Tab.Screen>
+
+      <Tab.Screen name="Lista de compras">
+        {(props) => <ChecklistScreen {...props} />}
       </Tab.Screen>
     </Tab.Navigator>
   );
